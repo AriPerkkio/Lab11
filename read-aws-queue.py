@@ -18,3 +18,5 @@ messages = queue.get_messages()
 if len(messages) > 0:
 	message = messages[0]
 	print("Message read: "+ message.get_body())
+else:
+	print("No messages")
