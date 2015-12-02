@@ -14,7 +14,9 @@ secret_access_key = key[21:]
 conn = boto.sqs.connect_to_region("eu-west-1", aws_access_key_id=access_key_id, aws_secret_access_key=secret_access_key)
 
 queue = conn.get_queue(sys.argv[1])
-rs = queue.get_messages()
+count = queue.count()
+
+
 
 print("Number of messages for queue "+sys.argv[1])
-print(len(rs))
+print(count)
